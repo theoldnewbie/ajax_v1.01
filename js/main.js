@@ -15,6 +15,24 @@ function loadHtmlFiles (element) {
 	});
 }
 
+function loadJSONFiles (element) {
+ $.ajax({
+  dataType: 'json',
+  method: 'GET',
+    url: headUrl + element,
+    success: function(data) {
+     var wrapDiv = $('<div>');
+     wrapDiv.html('<h2>' + data.title + '</h2><p>' + data.ty + '</p>');
+     $('.main-content').append(wrapDiv);
+    },
+    error: function(data) {
+     console.error(data);
+    }
+ });
+}
+
+
+
 function loadImgFiles (element) {
 	$.ajax({
 		url: headUrl + element,
@@ -25,7 +43,7 @@ function loadImgFiles (element) {
 }
 
 htmlList.forEach( loadHtmlFiles );
-
+jsonList.forEach( loadJSONFiles );
 imgList.forEach( loadImgFiles );
 
 
