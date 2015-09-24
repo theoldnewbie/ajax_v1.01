@@ -3,7 +3,7 @@ $('button').on('click', function(){
 	$.ajax({
 			url: 'http://theoldnewbie.github.io/ajax_v1.01/simple1.html',
 			success: function(data) {
-				$(document.body).html(data);
+				$('.div1').html(data);
 			},
 			error: function(data) {
 	  			console.error(data);
@@ -13,7 +13,7 @@ $('button').on('click', function(){
 	$.ajax({
 			url: 'http://theoldnewbie.github.io/ajax_v1.01/simple2.html',
 			success: function(data) {
-				$(document.body).html(data);
+				$('.div2').html(data);
 			},
 			error: function(data) {
 				console.error(data);
@@ -23,7 +23,7 @@ $('button').on('click', function(){
 	$.ajax({
 			url: 'http://theoldnewbie.github.io/ajax_v1.01/simple3.html',
 			success: function(data) {
-				$(document.body).html(data);
+				$('.div3').html(data);
 			},
 			error: function(data) {
 				console.error(data);
