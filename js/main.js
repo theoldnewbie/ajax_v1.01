@@ -45,8 +45,9 @@ function loadImgFiles (element) {
 	});
 }
 
-htmlList.forEach( loadHtmlFiles );
-jsonList.forEach( loadJSONFiles );
-imgList.forEach( loadImgFiles );
+$('#1').on('click', htmlList.forEach( loadHtmlFiles ));
+$('#2').on('click', jsonList.forEach( loadJSONFiles ));
+$('#3').on('click', imgList.forEach( loadImgFiles ));
+
 
 
