@@ -6,6 +6,7 @@ var imgList = ['img/Troll1.jpg','img/Troll2.jpg','img/Troll3.jpg'];
 function loadHtmlFiles (element) {
 	$.ajax({
 		url: headUrl + element,
+		async: false,
 		success: function(data) {
 			$('.main-content').append(data);
 		},
@@ -17,9 +18,10 @@ function loadHtmlFiles (element) {
 
 function loadJSONFiles (element) {
  $.ajax({
-  dataType: 'json',
-  method: 'GET',
+  	dataType: 'json',
+  	method: 'GET',
     url: headUrl + element,
+    async: false,
     success: function(data) {
      var wrapDiv = $('<div>');
      wrapDiv.html('<h2>' + data.title + '</h2><p>' + data.ty + '</p>');
@@ -36,6 +38,7 @@ function loadJSONFiles (element) {
 function loadImgFiles (element) {
 	$.ajax({
 		url: headUrl + element,
+		async: false,
 		success: function(data) {
 			$('.main-content').append('<img src = ' + this.url + '>');
 		}
