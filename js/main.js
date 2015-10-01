@@ -3,6 +3,17 @@ var htmlList = ['simple1.html','simple2.html','simple3.html'];
 var jsonList = ['some1.json','some2.json','some3.json'];
 var imgList = ['img/Troll1.jpg','img/Troll2.jpg','img/Troll3.jpg'];
 
+$('#1').on('click', function() {
+	htmlList.forEach( loadHtmlFiles );
+});
+$('#2').on('click', function() {
+	jsonList.forEach( loadJSONFiles );
+});
+$('#3').on('click', function() {
+	imgList.forEach( loadImgFiles );
+});
+
+
 function loadHtmlFiles (element) {
 	$.ajax({
 		url: headUrl + element,
@@ -47,10 +58,3 @@ function loadImgFiles (element) {
 
 
 
-var h = htmlList.forEach( loadHtmlFiles );
-var j = jsonList.forEach( loadJSONFiles );
-var i = imgList.forEach( loadImgFiles );
-
-$('#1').on('click', h);
-$('#2').on('click', j);
-$('#3').on('click', i);
